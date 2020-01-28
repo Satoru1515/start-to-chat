@@ -9,9 +9,9 @@ const server = http.createServer(app);
 const io = socketio.listen(server);
 
 
-io.on("connection" , socket =>{
-  console.log("New User Connected");
-});
+require("./sockets")(io);
+
+ 
 
 // STATIC FILES
 app.use(express.static(path.join(__dirname, "public")));
